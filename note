@@ -1,0 +1,33 @@
+爬虫：利用python模块伪造浏览器行为，读取网页源码，再经过正则匹配取出HTML文本的一系列处理，数据分析称为爬虫
+
+基本内容： 
+     - python实现浏览器行为： requests
+     - beautifulsoup4  对HTML内容进行分析
+      - HTTP相关知识：
+           - cookie
+           - csftToken
+           - 请求头：其中ContenType表明什么格式封装的数据，服务器需要用相应格式解数据
+             请求： 请求头(cookie)/请求体(发送的内容)
+             响应： 响应头（浏览器读取头数据）/响应体（我们看到的网页或网页源码）
+      - 数据持久化（数据库存储）       
+             
+            
+            
+性能相关：批量get URL可想而知性能重要性
+          线程池，进程池，【协程（微线程）：协程本身没有用，只做切换，具有切换特性】 ，异步非阻塞（如twisted,gevent,asyncio,tornado内部集成）
+          其中gevent(greenlet做切换，libevent做异步IO库)
+
+          七牛云进程线程分享:　https://segmentfault.com/a/1190000001813992
+
+          异步： 回调
+          非阻塞： 不等待
+
+
+后面会学到分布式爬虫组件redis-scrapy
+
+基本模块：
+pip3 install requests
+pip3 install beautifulsoup4   （将网页字符串解析为对象，用于直接取文本内容）
+
+
+
