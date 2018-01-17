@@ -65,9 +65,9 @@ pip3 install beautifulsoup4   （将网页字符串解析为对象，用于直�
 
 注意几点：
 ```
-1 回车时得到token,如果有token,一般get请求
-2 提交用户名密码时带上token,一般post请求
-3 登录后才能看到的网页
+1 回车时得到token和cookies,如果有token和cookies的话取出来,一般get请求
+2 提交用户名密码时带上token和cookies,一般post请求,并且取出登录成功后的cookies
+3 登录后才能看到的网页(前2次请求的cookies都带上)
 ```
 
 ### 示例
