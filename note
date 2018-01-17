@@ -57,6 +57,14 @@ pip3 install beautifulsoup4   （将网页字符串解析为对象，用于直�
   4 知乎，新浪微博这种有图形验证码的网站，需要第三方平台做图像识别（类似滑动验证码这种验证其实是向后台发送鼠标坐标）
 
 
+response=requests.get(url="https://www.autohome.com.cn/news/")
+print(response.status_code)
+response.status.code
+response.cookies
+response.headers
+response.content 字节类型 
+response.text    字节类型转为了字符串类型
+response.encoding
 
 
 
