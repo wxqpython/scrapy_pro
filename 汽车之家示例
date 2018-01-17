@@ -1,0 +1,30 @@
+# 汽车之家示例
+
+import requests
+from bs4 import BeautifulSoup
+
+response=requests.get(url="https://www.autohome.com.cn/news/")
+response.encoding = "gbk"
+# print(response.text)
+root = BeautifulSoup(response.text,'html.parser')
+outer_div_obj=root.find(name="div",id='auto-channel-lazyload-article')
+
+li_obj_list = outer_div_obj.find_all(name="li")
+for i in li_obj_list:
+    if not i.find("h3"):
+        continue
+    title_obj = i.find("h3")
+    print(title_obj.text)  # 标签的内容
+    img_obj=i.find("img")
+    url=img_obj.attrs.get("src")
+    print(url)
+    summary_obj = i.find("p")
+    print(summary_obj.text)
+
+
+src="//www3.autoimg.cn/newsdfs/g25/M04/4B/B8/120x90_0_autohomecar__wKgHIlpchUaADN4DAAILyRlNVFQ807.jpg"
+rs=requests.get("http:" +src)
+v=src.rsplit('/',maxsplit=1)
+img_file_name=v[1]
+with open(img_file_name,'wb') as f:
+    f.write(rs.content)
