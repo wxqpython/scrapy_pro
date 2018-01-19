@@ -25,8 +25,11 @@ WebSocket：
       2 让你跳转的URL可能浏览器自己加了一些东西，你没加上，直接URL跳转是不成功的
       
 
+requests拿不到网页考虑4个点：UserAgent refered host cookies 
 
-
+Query String Parameter URL传参时requests.get(url="xx", params={})
+Form Data         requests.post(url="xx",data={}) 
+Request Payload   requests.post(url="xx",json="")
 
 
 
