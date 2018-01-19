@@ -27,14 +27,26 @@ WebSocket：
 
 requests拿不到网页考虑4个点：UserAgent refered host cookies 
 
-Query String Parameter URL传参时requests.get(url="xx", params={})
-Form Data         requests.post(url="xx",data={}) 
-Request Payload   requests.post(url="xx",json="")
+dic = {"name":"旺旺","pwd":123}
+Query String Parameter URL传参时requests.get(url="xx", params=dic) #在请求头上，封装格式为application/x-www-form-urlencoded
+Form Data         requests.post(url="xx",data=dic)                # 在请求体上，封装格式为application/x-www-form-urlencoded 
+Request Payload   requests.post(url="xx",json=dic)                # 请请求体上，封装格式为application/json
+
+说明： data传参很灵活
+底层Socket发送都是字节
+如果你传入的是一个字典data=dic，自动帮你序列化后转为字节发送出去
+如果你传入的是一个json.dumps后的字符串，就给你转为字节后发送出去
+如果你传入的是字节，直接就发送出去
+
+requests.post(url="xx",json=dic)   # 这种方式不够灵活，不好传参，可以改写为如下：
+requests.post(url="xx",
+              data=json.dumps(dic,ensure_ascii=False).encode("utf-8"),
+              headers={"Content=Type":"application/json"},
+              cookies=all_cookies_dict
+              )
 
 
-
-
-
+#
 
 
 
