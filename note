@@ -1,6 +1,7 @@
 
 
-
+ requests模块
+ 
 response=requests.get(url="https://www.autohome.com.cn/news/")
 print(response.status_code)
 response.status.code
@@ -14,12 +15,25 @@ response.encoding="gbk"  解码
 obj = BeautifulSoup(response.text,'html.parser')
 obj.find("div",attrs={'id':'xxx','class':'xx'})  # 从上到下找第一个div标签
 还可以写成
-obj.find(name="div",id="auto-channel-lazyload-article",_class:"xx")  # 注意:_class
-obj.find_all() # 返回标签对象列表
+obj.find(name="div",id="auto-channel-lazyload-article",_class="xx")  # 注意:_class
+obj.find_all() # 返回标签对象列表，只找标签，recursive=True参数控制递归
 
 obj.find("h3").text #取标签内容
 xx=obj.find("img").attrs # 取img标签的所有属性
 yy = obj.find("img").attrs.get("src") # 取src属性值
+yy.name # 返回标签名
+tag.attrs["id"] = 1  # 添加一个属性
+del tag.attrs["id"]  # 删除一个属性
+
+
+
+clear
+decompose
+extract() 有返回值，返回删除标签
+
+
+
+
 
 src="//www3.autoimg.cn/newsdfs/g25/M04/4B/B8/120x90_0_autohomecar__wKgHIlpchUaADN4DAAILyRlNVFQ807.jpg"
 v=src.rsplit('/',maxsplit=1)  # 右边第一个/分割
