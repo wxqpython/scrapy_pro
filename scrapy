@@ -22,10 +22,14 @@ scrapy框架：
   5  可以设置代理
   6  
 
+scrapy框架工作原理：
+    spider 配置爬虫并发起爬虫请求，scrapy Engine把请求交给scheduler,scheduler取出请求去执行download，（下载的数据）返回数据给spider
+    spider有个parse()方法或称为回调函数， 对数据进一步处理（请求分流：是保存数据还是再次爬数据）
+    请求分流分为：1  交给Item pipeline做数据持久化(取决于parse方法返回ItemSpider对象)
+                 2  再次发爬虫请求到scheduler (取决于pase方法返回Request对象)
 
 
-
-
+其中Pipeline类又可以定义很多方法： -->from_crawler()->__init__() --> open_spider() --> process_item() --> close_spider() 
 
 
 
