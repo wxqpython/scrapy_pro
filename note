@@ -40,7 +40,7 @@ v=src.rsplit('/',maxsplit=1)  # 右边第一个/分割
 print(v[1])
 
 
-
+http://www.cnblogs.com/wupeiqi/articles/6229292.html
 # 高性能相关
 多线程，多进程，线程池，进程池: 
 python2没有线程池，有进程池
