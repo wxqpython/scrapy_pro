@@ -126,6 +126,7 @@ r,w,e = select.select(inputs,[],[],0.05)
 
 '''
 
+socket_client客户端一个线程并发socket请求，就要用到socket+select,一般爬虫才有一个socket_client并发多个socket客户端请求
 
 
 
