@@ -10,7 +10,9 @@ Windows
       2. 下载twisted http://www.lfd.uci.edu/~gohlke/pythonlibs/#twisted
       3. 进入下载目录，执行 pip3 install Twisted‑17.1.0‑cp35‑cp35m‑win_amd64.whl
       4. pip3 install scrapy
-      5. 下载并安装pywin32：pip3 install pywin32
+      5. 下载并安装pywin32：https://sourceforge.net/projects/pywin32/files/pywin32/
+            注意： 版本要对应、尽量最新222版本最新的也可以在此下载： https://github.com/mhammond/pywin32/releases
+      pip3 install pywin32  这种安装似乎有问题，反正我是遇到问题了
 
 
 scrapy框架：
