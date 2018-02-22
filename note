@@ -64,6 +64,8 @@ for url in url_list:
 IO多路复用：
 select: 检测socket对象是否发生变化（是否连接成功，是否有数据到来）
 
+socket客户端代码示例
+```
 import socket
 client = socket.socket()
 
@@ -72,7 +74,7 @@ client.sendall(b"GET / HTTP/1.0 \r\nhost: www.baidu.com\r\n\r\n") # 发送HTTP�
 client.recv(8096) # 获取响应
 print(data)
 client.close() # 关闭连接
-
+```
 
 ## select学习
 select: 用select实现的伪异步IO多路复用
