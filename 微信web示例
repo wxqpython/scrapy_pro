@@ -93,7 +93,7 @@ requests.post(url="xx",
 
 
 
-eg1:页面设置定时器来刷新页面：
+eg1:页面设置定时器轮循来刷新页面：（轮循性能很差）
 <script>
     function f1() {
         window.location.reload();
