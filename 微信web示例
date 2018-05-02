@@ -27,7 +27,7 @@ WebSocket：
       2 让你跳转的URL可能浏览器自己加了一些东西，你没加上，直接URL跳转是不成功的
       
 
-requests拿不到网页考虑4个点：UserAgent refered host cookies 
+当requests拿不到网页时考虑4个点：UserAgent refered host cookies 
 
 dic = {"name":"旺旺","pwd":123}
 Query String Parameter URL传参时requests.get(url="xx", params=dic) #在请求头上，封装格式为application/x-www-form-urlencoded
